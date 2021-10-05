@@ -24,18 +24,20 @@ class MyThemes {
       cardColor: DarkColors.black2,
       canvasColor: DarkColors.black3,
       disabledColor: DarkColors.black4,
+      shadowColor: DarkColors.black5,
       errorColor: DarkColors.red,
       colorScheme: ColorScheme.fromSwatch());
 
   static ThemeData lightTheme = ThemeData(
-    appBarTheme: AppBarTheme(backgroundColor: LightColors.green2, elevation: 0),
-    primaryColor: LightColors.green2,
+    appBarTheme: AppBarTheme(backgroundColor: LightColors.green1, elevation: 0),
+    primaryColor: LightColors.green1,
     accentColor: LightColors.green2,
-    backgroundColor: LightColors.green1,
-    scaffoldBackgroundColor: LightColors.black4,
-    cardColor: LightColors.black1,
-    canvasColor: LightColors.black2,
-    disabledColor: LightColors.black3,
+    backgroundColor: LightColors.green3,
+    scaffoldBackgroundColor: LightColors.white1,
+    cardColor: LightColors.white2,
+    canvasColor: LightColors.white3,
+    disabledColor: LightColors.white4,
+    shadowColor: LightColors.white5,
     errorColor: LightColors.red,
   );
 }
