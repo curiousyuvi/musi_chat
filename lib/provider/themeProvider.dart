@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:muse_chat/constants/colors.dart';
+import 'package:musi_chat/constants/colors.dart';
 
 class ThemeProvider extends ChangeNotifier {
   ThemeMode themeMode = ThemeMode.dark;

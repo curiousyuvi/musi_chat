@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:muse_chat/constants/colors.dart';
-import 'package:muse_chat/provider/themeProvider.dart';
-import 'package:muse_chat/screens/settings.dart';
+import 'package:musi_chat/constants/colors.dart';
+import 'package:musi_chat/provider/themeProvider.dart';
+import 'package:musi_chat/screens/settings.dart';
 import 'package:provider/provider.dart';
 import 'screens/chatsHome.dart';
 

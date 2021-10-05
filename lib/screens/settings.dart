@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:muse_chat/widgets/changeThemeButton.dart';
+import 'package:musi_chat/widgets/changeThemeButton.dart';
 
 class Settings extends StatefulWidget {
   const Settings({Key? key}) : super(key: key);

@@ -1,4 +1,4 @@
-# muse_chat
+# musi_chat
 
 A new Flutter project.
 

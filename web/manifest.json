@@ -1,6 +1,6 @@
 {
-    "name": "muse_chat",
-    "short_name": "muse_chat",
+    "name": "musi_chat",
+    "short_name": "musi_chat",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
