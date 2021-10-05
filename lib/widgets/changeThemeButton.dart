@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:muse_chat/provider/themeProvider.dart';
 import 'package:provider/provider.dart';
 
+//Theme Switcher Toggle Button
 class ChangeThemeButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

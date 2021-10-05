@@ -4,7 +4,6 @@ import 'package:muse_chat/constants/colors.dart';
 import 'package:muse_chat/provider/themeProvider.dart';
 import 'package:muse_chat/screens/settings.dart';
 import 'package:provider/provider.dart';
-
 import 'screens/chatsHome.dart';
 
 void main() {
@@ -19,12 +18,14 @@ class MyApp extends StatelessWidget {
         builder: (context, _) {
           final themeProvider = Provider.of<ThemeProvider>(context);
 
+          //To change the system Navigation bar color according to the theme
           SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
               systemNavigationBarColor:
                   themeProvider.themeMode == ThemeMode.dark
                       ? DarkColors.black1
                       : LightColors.black4));
           return MaterialApp(
+            debugShowCheckedModeBanner: false,
             routes: {
               "/": (context) {
                 return ChatsHome();
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
             theme: MyThemes.lightTheme,
             darkTheme: MyThemes.darkTheme,
             themeMode: themeProvider.themeMode,
-            initialRoute: "/settings",
+            initialRoute: "/",
           );
         });
   }
