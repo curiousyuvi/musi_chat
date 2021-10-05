@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
               systemNavigationBarColor:
                   themeProvider.themeMode == ThemeMode.dark
                       ? DarkColors.black1
-                      : LightColors.white4));
+                      : LightColors.white1));
 
           return MaterialApp(
             debugShowCheckedModeBanner: false,
