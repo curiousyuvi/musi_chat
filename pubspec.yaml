@@ -14,6 +14,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   provider: ^6.0.1
   flutter_statusbarcolor: ^0.2.3
+  font_awesome_flutter: ^9.1.0
 
 dev_dependencies:
   flutter_test:
@@ -30,3 +31,6 @@ flutter:
     - family: Poppins
       fonts:
         - asset: fonts/poppins.ttf
+    - family: BeautyMountain
+      fonts:
+        - asset: fonts/beautyMountain.ttf

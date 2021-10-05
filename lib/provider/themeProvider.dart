@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:musi_chat/constants/colors.dart';
+import 'package:provider/provider.dart';
 
 class ThemeProvider extends ChangeNotifier {
   ThemeMode themeMode = ThemeMode.dark;
@@ -37,4 +38,8 @@ class MyThemes {
     disabledColor: LightColors.black3,
     errorColor: LightColors.red,
   );
+}
+
+getThemeMode(BuildContext context) {
+  return Provider.of<ThemeProvider>(context).themeMode;
 }
