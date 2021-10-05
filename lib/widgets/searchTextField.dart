@@ -29,7 +29,7 @@ class SearchTextField extends StatelessWidget {
             width: 20,
           ),
           Expanded(
-              child: TextField(
+              child: TextFormField(
             maxLines: 1,
             textAlignVertical: TextAlignVertical.center,
             style: Theme.of(context).textTheme.bodyText1,
