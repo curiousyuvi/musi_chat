@@ -28,10 +28,15 @@ class MyThemes {
       shadowColor: DarkColors.black5,
       errorColor: DarkColors.red,
       textTheme: TextTheme(
+          headline1: TextStyle(
+              color: DarkColors.black5,
+              fontSize: 20,
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.bold),
           bodyText1: TextStyle(
               color: DarkColors.black5, fontSize: 18, fontFamily: 'Poppins'),
           bodyText2: TextStyle(
-              color: DarkColors.black4.withOpacity(0.8),
+              color: DarkColors.black5.withOpacity(0.5),
               fontSize: 15,
               fontFamily: 'Poppins')));
 
@@ -49,10 +54,15 @@ class MyThemes {
       shadowColor: LightColors.white5,
       errorColor: LightColors.red,
       textTheme: TextTheme(
+          headline1: TextStyle(
+              color: LightColors.white5,
+              fontSize: 20,
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.bold),
           bodyText1: TextStyle(
               color: LightColors.white5, fontSize: 18, fontFamily: 'Poppins'),
           bodyText2: TextStyle(
-              color: LightColors.white4.withOpacity(0.8),
+              color: LightColors.white5.withOpacity(0.5),
               fontSize: 15,
               fontFamily: 'Poppins')));
 }

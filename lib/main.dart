@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:musi_chat/constants/colors.dart';
 import 'package:musi_chat/provider/themeProvider.dart';
-import 'package:musi_chat/screens/settings.dart';
+import 'package:musi_chat/screens/roomScreen.dart';
+import 'package:musi_chat/screens/settingsScreen.dart';
 import 'package:provider/provider.dart';
-import 'screens/chatsHome.dart';
+import 'screens/chatsHomeScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,10 +30,13 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             routes: {
               "/": (context) {
-                return ChatsHome();
+                return ChatsHomeScreen();
               },
               "/settings": (context) {
-                return Settings();
+                return SettingsScreen();
+              },
+              "/chat": (context) {
+                return RoomScreen();
               },
             },
             theme: MyThemes.lightTheme,

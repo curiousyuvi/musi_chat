@@ -17,40 +17,46 @@ class ChatListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          child: Row(
-            children: [
-              CircleAvatar(
-                radius: 25,
-                foregroundImage: NetworkImage(imageUrl),
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      name,
-                      style: Theme.of(context).textTheme.bodyText1,
-                    ),
-                    Text(
-                      lastChat,
-                      style: Theme.of(context).textTheme.bodyText2,
-                    )
-                  ],
+        GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, "/chat");
+          },
+          child: Container(
+            color: Theme.of(context).scaffoldBackgroundColor,
+            child: Row(
+              children: [
+                CircleAvatar(
+                  radius: 25,
+                  foregroundImage: NetworkImage(imageUrl),
                 ),
-              ),
-              Text(
-                time,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyText2
-                    ?.copyWith(fontSize: 18),
-              )
-            ],
+                SizedBox(
+                  width: 10,
+                ),
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        name,
+                        style: Theme.of(context).textTheme.bodyText1,
+                      ),
+                      Text(
+                        lastChat,
+                        style: Theme.of(context).textTheme.bodyText2,
+                      )
+                    ],
+                  ),
+                ),
+                Text(
+                  time,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyText2
+                      ?.copyWith(fontSize: 18),
+                )
+              ],
+            ),
           ),
         ),
         SizedBox(

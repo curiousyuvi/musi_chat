@@ -3,12 +3,12 @@ import 'package:musi_chat/widgets/chatListTile.dart';
 import 'package:musi_chat/widgets/chatsHomeAppBar.dart';
 import 'package:musi_chat/widgets/searchTextField.dart';
 
-class ChatsHome extends StatefulWidget {
+class ChatsHomeScreen extends StatefulWidget {
   @override
-  _ChatsHomeState createState() => _ChatsHomeState();
+  _ChatsHomeScreenState createState() => _ChatsHomeScreenState();
 }
 
-class _ChatsHomeState extends State<ChatsHome> {
+class _ChatsHomeScreenState extends State<ChatsHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
