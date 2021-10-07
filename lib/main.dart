@@ -19,6 +19,10 @@ class MyApp extends StatelessWidget {
         builder: (context, _) {
           final themeProvider = Provider.of<ThemeProvider>(context);
 
+          //To force stop screen rotation
+          SystemChrome.setPreferredOrientations(
+              [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+
           //To change the system Navigation bar color according to the theme
           SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
               systemNavigationBarColor:

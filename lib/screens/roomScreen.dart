@@ -40,6 +40,7 @@ class _RoomScreenState extends State<RoomScreen> {
           RoomTopNavBar(
             currentScreen: currentScreen,
             onTap: changeScreen,
+            isPlaying: true,
           ),
           Expanded(
             child: PageView(

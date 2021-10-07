@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:musi_chat/constants/enums.dart';
+import 'package:musi_chat/provider/themeProvider.dart';
+import 'package:rive/rive.dart';
 
 class RoomTopNavBar extends StatelessWidget {
   RoomScreenType currentScreen;
   void Function()? onTap;
+  bool isPlaying;
 
-  RoomTopNavBar({this.currentScreen = RoomScreenType.chat, this.onTap});
+  RoomTopNavBar(
+      {this.currentScreen = RoomScreenType.chat,
+      this.onTap,
+      this.isPlaying = false});
 
   @override
   Widget build(BuildContext context) {
@@ -44,10 +50,16 @@ class RoomTopNavBar extends StatelessWidget {
                   height: double.infinity,
                   width: MediaQuery.of(context).size.width * 0.4,
                   child: Center(
-                    child: FaIcon(
-                      FontAwesomeIcons.solidPauseCircle,
-                      size: 25,
-                    ),
+                    child: isPlaying
+                        ? getThemeMode(context) == ThemeMode.dark
+                            ? RiveAnimation.asset(
+                                'riveAssets/music_wave_light.riv')
+                            : RiveAnimation.asset(
+                                'riveAssets/music_wave_dark.riv')
+                        : FaIcon(
+                            FontAwesomeIcons.solidPauseCircle,
+                            size: 25,
+                          ),
                   ),
                 ),
               ),
