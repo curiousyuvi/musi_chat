@@ -45,7 +45,7 @@ class RoomTopNavBar extends StatelessWidget {
                   width: MediaQuery.of(context).size.width * 0.4,
                   child: Center(
                     child: FaIcon(
-                      FontAwesomeIcons.music,
+                      FontAwesomeIcons.solidPauseCircle,
                       size: 25,
                     ),
                   ),

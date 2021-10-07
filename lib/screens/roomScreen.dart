@@ -6,8 +6,6 @@ import 'package:musi_chat/widgets/roomAppBar.dart';
 import 'package:musi_chat/widgets/roomTopNavBar.dart';
 
 class RoomScreen extends StatefulWidget {
-  const RoomScreen({Key? key}) : super(key: key);
-
   @override
   _RoomScreenState createState() => _RoomScreenState();
 }

@@ -30,6 +30,7 @@ class SearchTextField extends StatelessWidget {
           ),
           Expanded(
               child: TextFormField(
+            cursorColor: Theme.of(context).shadowColor,
             maxLines: 1,
             textAlignVertical: TextAlignVertical.center,
             style: Theme.of(context).textTheme.bodyText1,
