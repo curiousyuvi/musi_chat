@@ -17,6 +17,7 @@ dependencies:
   font_awesome_flutter: ^9.1.0
   rive: ^0.7.28
   bubble: ^1.2.1
+  syncfusion_flutter_sliders: ^19.3.44
 
 dev_dependencies:
   flutter_test:

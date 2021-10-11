@@ -1,12 +1,10 @@
-import 'package:bubble/bubble.dart';
 import 'package:flutter/material.dart';
 import 'package:musi_chat/widgets/chatScreenMessageTextField.dart';
+import 'package:musi_chat/widgets/dateUpdateTile.dart';
 import 'package:musi_chat/widgets/receivedMessageTile.dart';
 import 'package:musi_chat/widgets/sentMessageTile.dart';
 
 class ChatScreen extends StatefulWidget {
-  const ChatScreen({Key? key}) : super(key: key);
-
   @override
   _ChatScreenState createState() => _ChatScreenState();
 }
@@ -23,8 +21,9 @@ class _ChatScreenState extends State<ChatScreen> {
             padding: EdgeInsets.fromLTRB(16, 16, 16, 0),
             child: ListView(
               children: [
+                DateUpdateTile(messageBody: 'Tuesday, 2021'),
                 SentMessageTile(messageBody: 'Hi'),
-                ReceivedMessageTile(messageBody: 'Hello!!')
+                ReceivedMessageTile(messageBody: 'Hello!!'),
               ],
             ),
           )),
