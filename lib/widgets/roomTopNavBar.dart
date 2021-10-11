@@ -57,7 +57,7 @@ class RoomTopNavBar extends StatelessWidget {
                             : RiveAnimation.asset(
                                 'riveAssets/music_wave_dark.riv')
                         : FaIcon(
-                            FontAwesomeIcons.solidPauseCircle,
+                            FontAwesomeIcons.music,
                             size: 25,
                           ),
                   ),

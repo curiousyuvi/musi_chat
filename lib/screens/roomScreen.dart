@@ -13,6 +13,8 @@ class RoomScreen extends StatefulWidget {
 class _RoomScreenState extends State<RoomScreen> {
   RoomScreenType currentScreen = RoomScreenType.chat;
 
+  bool isPlaying = false;
+
   var chatScreenKey = GlobalKey<NavigatorState>();
   var songScreenKey = GlobalKey<NavigatorState>();
 
@@ -40,7 +42,7 @@ class _RoomScreenState extends State<RoomScreen> {
           RoomTopNavBar(
             currentScreen: currentScreen,
             onTap: changeScreen,
-            isPlaying: true,
+            isPlaying: isPlaying,
           ),
           Expanded(
             child: PageView(
