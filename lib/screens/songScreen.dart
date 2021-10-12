@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:musi_chat/provider/playProvider.dart';
 import 'package:musi_chat/widgets/playerBottomBar.dart';
 import 'package:musi_chat/widgets/searchTextField.dart';
+import 'package:provider/provider.dart';
 
 class SongScreen extends StatefulWidget {
   @override
@@ -13,6 +15,8 @@ class _SongScreenState extends State<SongScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final playProvider = Provider.of<PlayProvider>(context);
+
     return Scaffold(
         body: Column(
       children: [
@@ -31,8 +35,13 @@ class _SongScreenState extends State<SongScreen> {
           ),
         ),
         PlayerBottomBar(
-          sliderValue: sliderValue,
-        )
+            sliderValue: sliderValue,
+            isPlaying: playProvider.isPlaying,
+            onSliderValChanged: (val) {
+              setState(() {
+                sliderValue = val;
+              });
+            })
       ],
     ));
   }

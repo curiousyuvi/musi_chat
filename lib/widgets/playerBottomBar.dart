@@ -1,26 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:musi_chat/provider/sliderThemeProvider.dart';
+import 'package:musi_chat/constants/sliderTrackShape.dart';
+import 'package:musi_chat/provider/playProvider.dart';
+import 'package:provider/provider.dart';
 import 'package:rive/rive.dart';
 
-class PlayerBottomBar extends StatefulWidget {
-  double sliderValue;
+class PlayerBottomBar extends StatelessWidget {
   bool isPlaying;
-  PlayerBottomBar({this.sliderValue = 0, this.isPlaying = false});
-
-  @override
-  _PlayerBottomBarState createState() =>
-      _PlayerBottomBarState(sliderValue: sliderValue);
-}
-
-class _PlayerBottomBarState extends State<PlayerBottomBar> {
   double sliderValue;
-  bool isPlaying;
-
-  _PlayerBottomBarState({this.sliderValue = 0, this.isPlaying = false});
+  void Function(double)? onSliderValChanged;
+  PlayerBottomBar(
+      {this.isPlaying = false, this.sliderValue = 50, this.onSliderValChanged});
 
   @override
   Widget build(BuildContext context) {
+    final playProvider = Provider.of<PlayProvider>(context);
+
     return Container(
       decoration: BoxDecoration(color: Theme.of(context).primaryColor),
       child: Row(
@@ -56,11 +51,16 @@ class _PlayerBottomBarState extends State<PlayerBottomBar> {
                         ? RiveAnimation.asset(
                             'riveAssets/music_wave_light.riv',
                           )
-                        : Center(
-                            child: FaIcon(
-                            FontAwesomeIcons.playCircle,
-                            size: 45,
-                          )),
+                        : GestureDetector(
+                            onTap: () {
+                              playProvider.TogglePlayPause();
+                            },
+                            child: Center(
+                                child: FaIcon(
+                              FontAwesomeIcons.playCircle,
+                              size: 45,
+                            )),
+                          ),
                   ),
                 ),
               ),
@@ -126,15 +126,20 @@ class _PlayerBottomBarState extends State<PlayerBottomBar> {
                         SizedBox(
                           width: 20,
                         ),
-                        isPlaying
-                            ? FaIcon(
-                                FontAwesomeIcons.solidPauseCircle,
-                                size: 28,
-                              )
-                            : FaIcon(
-                                FontAwesomeIcons.solidPlayCircle,
-                                size: 28,
-                              ),
+                        GestureDetector(
+                          onTap: () {
+                            playProvider.TogglePlayPause();
+                          },
+                          child: isPlaying
+                              ? FaIcon(
+                                  FontAwesomeIcons.solidPauseCircle,
+                                  size: 28,
+                                )
+                              : FaIcon(
+                                  FontAwesomeIcons.solidPlayCircle,
+                                  size: 28,
+                                ),
+                        ),
                         SizedBox(
                           width: 20,
                         ),
@@ -171,11 +176,7 @@ class _PlayerBottomBarState extends State<PlayerBottomBar> {
                             Theme.of(context).shadowColor.withOpacity(0.3),
                         value: sliderValue,
                         label: 'Song',
-                        onChanged: (val) {
-                          setState(() {
-                            sliderValue = val;
-                          });
-                        },
+                        onChanged: onSliderValChanged,
                       ),
                     )
                   ],

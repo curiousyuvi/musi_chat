@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:musi_chat/constants/enums.dart';
+import 'package:musi_chat/provider/playProvider.dart';
 import 'package:musi_chat/screens/chatScreen.dart';
 import 'package:musi_chat/screens/songScreen.dart';
 import 'package:musi_chat/widgets/roomAppBar.dart';
 import 'package:musi_chat/widgets/roomTopNavBar.dart';
+import 'package:provider/provider.dart';
 
 class RoomScreen extends StatefulWidget {
   @override
@@ -12,8 +14,6 @@ class RoomScreen extends StatefulWidget {
 
 class _RoomScreenState extends State<RoomScreen> {
   RoomScreenType currentScreen = RoomScreenType.chat;
-
-  bool isPlaying = false;
 
   var chatScreenKey = GlobalKey<NavigatorState>();
   var songScreenKey = GlobalKey<NavigatorState>();
@@ -34,6 +34,8 @@ class _RoomScreenState extends State<RoomScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final playProvider = Provider.of<PlayProvider>(context);
+
     return Scaffold(
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(kToolbarHeight), child: RoomAppBar()),
@@ -42,7 +44,7 @@ class _RoomScreenState extends State<RoomScreen> {
           RoomTopNavBar(
             currentScreen: currentScreen,
             onTap: changeScreen,
-            isPlaying: isPlaying,
+            isPlaying: playProvider.isPlaying,
           ),
           Expanded(
             child: PageView(

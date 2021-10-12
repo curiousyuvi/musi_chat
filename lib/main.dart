@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:musi_chat/constants/colors.dart';
+import 'package:musi_chat/provider/playProvider.dart';
 import 'package:musi_chat/provider/themeProvider.dart';
 import 'package:musi_chat/screens/roomScreen.dart';
 import 'package:musi_chat/screens/settingsScreen.dart';
@@ -14,8 +15,11 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-        create: (context) => ThemeProvider(),
+    return MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (_) => ThemeProvider()),
+          ChangeNotifierProvider(create: (_) => PlayProvider())
+        ],
         builder: (context, _) {
           final themeProvider = Provider.of<ThemeProvider>(context);
 
