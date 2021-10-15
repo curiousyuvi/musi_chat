@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:musi_chat/constants/colors.dart';
 import 'package:musi_chat/constants/sliderTrackShape.dart';
 import 'package:musi_chat/provider/playProvider.dart';
 import 'package:provider/provider.dart';
@@ -58,6 +59,7 @@ class PlayerBottomBar extends StatelessWidget {
                             child: Center(
                                 child: FaIcon(
                               FontAwesomeIcons.playCircle,
+                              color: LightColors.white1,
                               size: 45,
                             )),
                           ),

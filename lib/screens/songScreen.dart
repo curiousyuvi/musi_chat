@@ -29,7 +29,37 @@ class _SongScreenState extends State<SongScreen> {
                 SizedBox(
                   height: 16,
                 ),
-                Expanded(child: ListView())
+                Expanded(
+                    child: ListView(
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          width: double.infinity,
+                          height: MediaQuery.of(context).size.width * 0.2,
+                          child: Row(
+                            children: [
+                              Stack(
+                                children: [
+                                  Container(
+                                      height:
+                                          MediaQuery.of(context).size.width *
+                                              0.2,
+                                      width: MediaQuery.of(context).size.width *
+                                          0.2,
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                            image: AssetImage('assets')),
+                                      ))
+                                ],
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    )
+                  ],
+                ))
               ],
             ),
           ),
