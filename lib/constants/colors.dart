@@ -18,8 +18,8 @@ class LightColors {
   static Color green3 = Color(0xffD0F8E3);
   static Color white1 = Color(0xffE9EAEB);
   static Color white2 = Color(0xffDBDCDC);
-  static Color white3 = Color(0xff637079);
-  static Color white4 = Color(0xff3A4750);
+  static Color white3 = Color(0xff90a4b2);
+  static Color white4 = Color(0xff637079);
   static Color white5 = Color(0xff303841);
   static Color red = Color(0xffDE5246);
 }
