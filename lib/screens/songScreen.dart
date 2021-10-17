@@ -80,28 +80,3 @@ class _SongScreenState extends State<SongScreen>
   @override
   bool get wantKeepAlive => true;
 }
-
-
-
-/*SliderTheme(
-                      data: SliderThemeData(
-                        trackHeight: 3,
-                        trackShape: CustomTrackShape(),
-                        thumbShape:
-                            RoundSliderThumbShape(enabledThumbRadius: 5.0),
-                      ),
-                      child: Slider(
-                        min: 0.0,
-                        max: 100.0,
-                        activeColor: Theme.of(context).shadowColor,
-                        inactiveColor:
-                            Theme.of(context).shadowColor.withOpacity(0.3),
-                        value: sliderValue,
-                        label: 'Song',
-                        onChanged: (val) {
-                          setState(() {
-                            sliderValue = val;
-                          });
-                        },
-                      ),
-                    ),*/ 
