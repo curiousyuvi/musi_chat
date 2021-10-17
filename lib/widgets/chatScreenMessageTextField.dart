@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class ChatScreenMessageTextField extends StatefulWidget {
-  const ChatScreenMessageTextField({Key? key}) : super(key: key);
+class ChatScreenMessageTextField extends StatelessWidget {
+  bool isTyping;
+  TextEditingController? controller;
+  void Function()? onSendClick;
+  void Function(String)? onChanged;
+  void Function()? onAttachmentClick;
 
-  @override
-  _ChatScreenMessageTextFieldState createState() =>
-      _ChatScreenMessageTextFieldState();
-}
+  ChatScreenMessageTextField(
+      {this.onSendClick,
+      this.onAttachmentClick,
+      this.controller,
+      this.isTyping = false,
+      this.onChanged});
 
-class _ChatScreenMessageTextFieldState
-    extends State<ChatScreenMessageTextField> {
-  bool isChatting = false;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -32,16 +35,9 @@ class _ChatScreenMessageTextFieldState
                     Border.all(color: Theme.of(context).shadowColor, width: 1)),
             padding: EdgeInsets.symmetric(horizontal: 18),
             child: TextFormField(
+              onChanged: onChanged,
+              controller: controller,
               cursorColor: Theme.of(context).shadowColor,
-              onChanged: (val) {
-                setState(() {
-                  if (val.isEmpty) {
-                    isChatting = false;
-                  } else {
-                    isChatting = true;
-                  }
-                });
-              },
               maxLines: 1,
               textAlignVertical: TextAlignVertical.center,
               style: Theme.of(context).textTheme.bodyText1,
@@ -58,14 +54,20 @@ class _ChatScreenMessageTextFieldState
           SizedBox(
             width: 15,
           ),
-          isChatting
-              ? FaIcon(
-                  FontAwesomeIcons.solidArrowAltCircleRight,
-                  size: 25,
+          isTyping
+              ? GestureDetector(
+                  onTap: onSendClick,
+                  child: FaIcon(
+                    FontAwesomeIcons.solidArrowAltCircleRight,
+                    size: 25,
+                  ),
                 )
-              : FaIcon(
-                  FontAwesomeIcons.paperclip,
-                  size: 25,
+              : GestureDetector(
+                  onTap: onAttachmentClick,
+                  child: FaIcon(
+                    FontAwesomeIcons.paperclip,
+                    size: 25,
+                  ),
                 )
         ],
       ),

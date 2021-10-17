@@ -10,6 +10,13 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
+  List<Widget> chatsWidgetList = [
+    DateUpdateTile(messageBody: 'Tuesday, 2021'),
+    SentMessageTile(messageBody: 'Hi'),
+    ReceivedMessageTile(messageBody: 'Hello!!'),
+  ];
+  bool isTyping = false;
+  TextEditingController? msgController = TextEditingController(text: "");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,14 +27,26 @@ class _ChatScreenState extends State<ChatScreen> {
               child: Container(
             padding: EdgeInsets.fromLTRB(16, 16, 16, 0),
             child: ListView(
-              children: [
-                DateUpdateTile(messageBody: 'Tuesday, 2021'),
-                SentMessageTile(messageBody: 'Hi'),
-                ReceivedMessageTile(messageBody: 'Hello!!'),
-              ],
+              children: List.from(chatsWidgetList.reversed),
+              reverse: true,
             ),
           )),
-          ChatScreenMessageTextField()
+          ChatScreenMessageTextField(
+            isTyping: msgController!.text != "",
+            onChanged: (val) {
+              setState(() {});
+            },
+            controller: msgController,
+            onSendClick: () {
+              chatsWidgetList.add(SentMessageTile(
+                messageBody: msgController!.text,
+              ));
+
+              msgController!.text = "";
+
+              setState(() {});
+            },
+          )
         ],
       ),
     ));
