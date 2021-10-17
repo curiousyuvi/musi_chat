@@ -10,7 +10,8 @@ class SongScreen extends StatefulWidget {
   _SongScreenState createState() => _SongScreenState();
 }
 
-class _SongScreenState extends State<SongScreen> {
+class _SongScreenState extends State<SongScreen>
+    with AutomaticKeepAliveClientMixin<SongScreen> {
   double sliderValue = 0;
 
   @override
@@ -75,6 +76,9 @@ class _SongScreenState extends State<SongScreen> {
       ],
     ));
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
 
 

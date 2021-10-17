@@ -9,7 +9,8 @@ class ChatScreen extends StatefulWidget {
   _ChatScreenState createState() => _ChatScreenState();
 }
 
-class _ChatScreenState extends State<ChatScreen> {
+class _ChatScreenState extends State<ChatScreen>
+    with AutomaticKeepAliveClientMixin<ChatScreen> {
   List<Widget> chatsWidgetList = [
     DateUpdateTile(messageBody: 'Tuesday, 2021'),
     SentMessageTile(messageBody: 'Hi'),
@@ -51,4 +52,7 @@ class _ChatScreenState extends State<ChatScreen> {
       ),
     ));
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
