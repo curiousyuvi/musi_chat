@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:musi_chat/constants/enums.dart';
+import 'package:musi_chat/routes/heroDialogRoute.dart';
+import 'package:musi_chat/widgets/PopUpAvatar.dart';
 
 class RoomAppBar extends StatelessWidget {
-  const RoomAppBar({
-    Key? key,
-  }) : super(key: key);
+  String name, imageUrl;
+  RoomAppBar({this.name = '', this.imageUrl = ''});
 
   @override
   Widget build(BuildContext context) {
@@ -13,20 +15,29 @@ class RoomAppBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          CircleAvatar(
-            radius: 24,
-            backgroundColor: Theme.of(context).accentColor,
-            child: CircleAvatar(
-              radius: 20,
-              foregroundImage: NetworkImage(
-                  'https://cdn.britannica.com/q:60/91/181391-050-1DA18304/cat-toes-paw-number-paws-tiger-tabby.jpg'),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context, HeroDialogRoute(builder: (context) {
+                return Center(
+                  child: PopUpAvatar(
+                    imageUrl: imageUrl,
+                    name: name,
+                    popUpType: PopUpAvatarType.dialog,
+                  ),
+                );
+              }));
+            },
+            child: PopUpAvatar(
+              name: name,
+              imageUrl: imageUrl,
+              popUpType: PopUpAvatarType.avatar,
             ),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Anup CS',
+                name,
                 style: Theme.of(context).textTheme.headline1,
               ),
               Text(

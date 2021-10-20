@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:musi_chat/constants/enums.dart';
+import 'package:musi_chat/objects/person.dart';
+import 'package:musi_chat/routes/heroDialogRoute.dart';
+import 'package:musi_chat/widgets/PopUpAvatar.dart';
 
 class ChatListTile extends StatelessWidget {
   String imageUrl;
@@ -19,16 +23,30 @@ class ChatListTile extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () {
-            Navigator.pushNamed(context, "/chat");
+            Navigator.pushNamed(context, "/chat",
+                arguments: Person(name: name, imageUrl: imageUrl));
           },
           child: Container(
             color: Theme.of(context).scaffoldBackgroundColor,
             child: Row(
               children: [
-                CircleAvatar(
-                  radius: 25,
-                  foregroundImage: NetworkImage(imageUrl),
-                ),
+                GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          HeroDialogRoute(builder: (context) {
+                        return Center(
+                          child: PopUpAvatar(
+                            imageUrl: imageUrl,
+                            name: name,
+                            popUpType: PopUpAvatarType.dialog,
+                          ),
+                        );
+                      }));
+                    },
+                    child: PopUpAvatar(
+                      name: name,
+                      imageUrl: imageUrl,
+                    )),
                 SizedBox(
                   width: 10,
                 ),

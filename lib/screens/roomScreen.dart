@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:musi_chat/constants/enums.dart';
+import 'package:musi_chat/objects/person.dart';
 import 'package:musi_chat/provider/playProvider.dart';
 import 'package:musi_chat/screens/chatScreen.dart';
 import 'package:musi_chat/screens/songScreen.dart';
@@ -34,11 +35,17 @@ class _RoomScreenState extends State<RoomScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Person person = ModalRoute.of(context)!.settings.arguments as Person;
+
     final playProvider = Provider.of<PlayProvider>(context);
 
     return Scaffold(
       appBar: PreferredSize(
-          preferredSize: Size.fromHeight(kToolbarHeight), child: RoomAppBar()),
+          preferredSize: Size.fromHeight(kToolbarHeight),
+          child: RoomAppBar(
+            name: person.name,
+            imageUrl: person.imageUrl,
+          )),
       body: Column(
         children: [
           RoomTopNavBar(

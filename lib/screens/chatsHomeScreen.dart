@@ -32,43 +32,7 @@ class _ChatsHomeScreenState extends State<ChatsHomeScreen> {
                         lastChat: 'Aj college jaega?',
                       ),
                       ChatListTile(
-                        name: 'Anup CS',
-                        lastChat: 'Aj college jaega?',
-                      ),
-                      ChatListTile(
-                        name: 'Anup CS',
-                        lastChat: 'Aj college jaega?',
-                      ),
-                      ChatListTile(
-                        name: 'Anup CS',
-                        lastChat: 'Aj college jaega?',
-                      ),
-                      ChatListTile(
-                        name: 'Anup CS',
-                        lastChat: 'Aj college jaega?',
-                      ),
-                      ChatListTile(
-                        name: 'Anup CS',
-                        lastChat: 'Aj college jaega?',
-                      ),
-                      ChatListTile(
-                        name: 'Anup CS',
-                        lastChat: 'Aj college jaega?',
-                      ),
-                      ChatListTile(
-                        name: 'Anup CS',
-                        lastChat: 'Aj college jaega?',
-                      ),
-                      ChatListTile(
-                        name: 'Anup CS',
-                        lastChat: 'Aj college jaega?',
-                      ),
-                      ChatListTile(
-                        name: 'Anup CS',
-                        lastChat: 'Aj college jaega?',
-                      ),
-                      ChatListTile(
-                        name: 'Anup CS',
+                        name: 'Vivek CS',
                         lastChat: 'Aj college jaega?',
                       ),
                     ],
