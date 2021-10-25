@@ -13,9 +13,9 @@ class DarkColors {
 }
 
 class LightColors {
-  static Color green1 = Color(0xff0adb76);
-  static Color green2 = Color(0xff7AE2B0);
-  static Color green3 = Color(0xffBCE7D4);
+  static Color green1 = Color(0xff6fc37c);
+  static Color green2 = Color(0xffACD7B3);
+  static Color green3 = Color(0xffD1E2D5);
   static Color white1 = Color(0xffE9EAEB);
   static Color white2 = Color(0xffDBDCDC);
   static Color white3 = Color(0xff90a4b2);

@@ -3,10 +3,11 @@ import 'package:flutter/services.dart';
 import 'package:musi_chat/constants/colors.dart';
 import 'package:musi_chat/provider/playProvider.dart';
 import 'package:musi_chat/provider/themeProvider.dart';
+import 'package:musi_chat/screens/loginScreen.dart';
 import 'package:musi_chat/screens/roomScreen.dart';
 import 'package:musi_chat/screens/settingsScreen.dart';
 import 'package:provider/provider.dart';
-import 'screens/chatsHomeScreen.dart';
+import 'screens/roomsHomeScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             routes: {
               "/": (context) {
-                return ChatsHomeScreen();
+                return RoomsHomeScreen();
               },
               "/settings": (context) {
                 return SettingsScreen();
@@ -46,6 +47,9 @@ class MyApp extends StatelessWidget {
               "/chat": (context) {
                 return RoomScreen();
               },
+              "/login": (context) {
+                return LoginScreen();
+              }
             },
             theme: MyThemes.lightTheme,
             darkTheme: MyThemes.darkTheme,

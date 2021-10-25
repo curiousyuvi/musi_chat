@@ -1,5 +1,6 @@
 import 'package:bubble/bubble.dart';
 import 'package:flutter/material.dart';
+import 'package:musi_chat/constants/colors.dart';
 
 class SentMessageTile extends StatelessWidget {
   String messageBody;
@@ -23,7 +24,10 @@ class SentMessageTile extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 6.0),
               child: Text(
                 messageBody,
-                style: Theme.of(context).textTheme.bodyText1,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyText1!
+                    .copyWith(color: LightColors.white1),
               ),
             ),
           ),

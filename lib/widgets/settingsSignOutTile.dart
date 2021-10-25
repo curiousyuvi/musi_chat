@@ -12,6 +12,9 @@ class SettingsSignOutTile extends StatelessWidget {
       children: [
         Container(
           padding: EdgeInsets.all(8),
+          decoration: BoxDecoration(
+              color: Theme.of(context).errorColor.withOpacity(0.15),
+              borderRadius: BorderRadius.circular(10)),
           child: Row(
             children: [
               Container(height: 60, width: 60, child: Center(child: leading)),

@@ -1,53 +1,43 @@
 import 'package:flutter/material.dart';
-import 'package:musi_chat/constants/appHeading.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class ChatsHomeAppBar extends StatelessWidget {
-  const ChatsHomeAppBar({
+class RoomsHomeAppBar extends StatelessWidget {
+  const RoomsHomeAppBar({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: SizedBox.shrink(),
+      toolbarHeight: 70,
       title: Center(
-        child: AppHeading(),
-      ),
-      actions: [
-        Center(
-            child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: GestureDetector(
-            onTap: () {
-              Navigator.pushNamed(context, "/settings");
-            },
-            child: Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(100),
-                  boxShadow: [
-                    BoxShadow(
-                        offset: Offset(0, 2),
-                        blurRadius: 5,
-                        color: Colors.black.withOpacity(0.3))
-                  ]),
-              child: CircleAvatar(
-                backgroundColor: Theme.of(context).accentColor,
-                child: Padding(
-                  padding: const EdgeInsets.all(2.0),
-                  child: CircleAvatar(
-                    backgroundColor: Theme.of(context).primaryColor,
-                    child: Icon(
-                      Icons.settings_outlined,
-                      size: 25,
-                      color: Theme.of(context).shadowColor,
-                    ),
-                  ),
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              'Messages',
+              style: Theme.of(context).textTheme.headline1,
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, "/settings");
+              },
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+                decoration: BoxDecoration(
+                    color: Theme.of(context).primaryColor,
+                    borderRadius: BorderRadius.circular(5)),
+                child: FaIcon(
+                  FontAwesomeIcons.slidersH,
+                  size: 20,
+                  color: Theme.of(context).scaffoldBackgroundColor,
                 ),
               ),
-            ),
-          ),
-        ))
-      ],
+            )
+          ],
+        ),
+      ),
     );
   }
 }

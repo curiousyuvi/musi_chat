@@ -25,7 +25,7 @@ class ChatScreenMessageTextField extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           color: Theme.of(context).backgroundColor,
-          borderRadius: BorderRadius.circular(100),
+          borderRadius: BorderRadius.circular(10),
         ),
         padding: EdgeInsets.symmetric(horizontal: 18),
         child: Row(

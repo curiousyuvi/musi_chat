@@ -15,13 +15,9 @@ class SettingsUserTile extends StatelessWidget {
           child: Row(
             children: [
               CircleAvatar(
-                backgroundColor: Theme.of(context).accentColor,
-                radius: 41,
-                child: CircleAvatar(
-                  foregroundImage: NetworkImage(
-                      'https://cdn.alfabetajuega.com/wp-content/uploads/2021/05/Yuji-Itadori1.jpg'),
-                  radius: 38,
-                ),
+                foregroundImage: NetworkImage(
+                    'https://cdn.alfabetajuega.com/wp-content/uploads/2021/05/Yuji-Itadori1.jpg'),
+                radius: 30,
               ),
               SizedBox(
                 width: 50,
@@ -31,13 +27,10 @@ class SettingsUserTile extends StatelessWidget {
                 children: [
                   Text(
                     'Yuvraj Singh',
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyText1!
-                        .copyWith(fontWeight: FontWeight.bold),
+                    style: Theme.of(context).textTheme.bodyText1,
                   ),
                   Text(
-                    'Level up alone :^)',
+                    'Level up alone 😎',
                     style: Theme.of(context).textTheme.bodyText2,
                   )
                 ],

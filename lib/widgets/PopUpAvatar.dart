@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:line_icons/line_icon.dart';
+import 'package:line_icons/line_icons.dart';
 import 'package:musi_chat/constants/enums.dart';
 
 class PopUpAvatar extends StatelessWidget {
@@ -16,6 +19,14 @@ class PopUpAvatar extends StatelessWidget {
       tag: 'avatarDialog' + name + imageUrl,
       child: SingleChildScrollView(
         child: Container(
+          decoration: popUpType == PopUpAvatarType.dialog
+              ? BoxDecoration(boxShadow: [
+                  BoxShadow(
+                      color: Colors.black45.withOpacity(0.3),
+                      blurRadius: 20,
+                      spreadRadius: 5)
+                ])
+              : BoxDecoration(),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -23,8 +34,8 @@ class PopUpAvatar extends StatelessWidget {
               Stack(
                 children: [
                   Container(
-                    height: popUpType == PopUpAvatarType.dialog ? 250 : 50,
-                    width: popUpType == PopUpAvatarType.dialog ? 250 : 50,
+                    height: popUpType == PopUpAvatarType.dialog ? 250 : 45,
+                    width: popUpType == PopUpAvatarType.dialog ? 250 : 45,
                     decoration: BoxDecoration(
                         image: DecorationImage(
                             image: NetworkImage(imageUrl), fit: BoxFit.cover),
@@ -59,10 +70,10 @@ class PopUpAvatar extends StatelessWidget {
               ),
               popUpType == PopUpAvatarType.dialog
                   ? Container(
-                      padding: EdgeInsets.all(6),
+                      padding: EdgeInsets.all(8),
                       width: 250,
                       decoration: BoxDecoration(
-                          color: Theme.of(context).scaffoldBackgroundColor,
+                          color: Theme.of(context).backgroundColor,
                           borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(10),
                               bottomRight: Radius.circular(10))),
@@ -72,14 +83,14 @@ class PopUpAvatar extends StatelessWidget {
                         children: [
                           Flexible(
                             child: Icon(
-                              Icons.message,
+                              FontAwesomeIcons.solidCommentAlt,
                               size: 28,
                               color: Theme.of(context).primaryColor,
                             ),
                           ),
                           Flexible(
                             child: Icon(
-                              Icons.info_outline,
+                              FontAwesomeIcons.infoCircle,
                               size: 28,
                               color: Theme.of(context).primaryColor,
                             ),

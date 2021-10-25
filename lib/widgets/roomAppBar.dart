@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:musi_chat/constants/colors.dart';
 import 'package:musi_chat/constants/enums.dart';
 import 'package:musi_chat/routes/heroDialogRoute.dart';
 import 'package:musi_chat/widgets/PopUpAvatar.dart';
@@ -10,6 +11,7 @@ class RoomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: Theme.of(context).primaryColor,
       automaticallyImplyLeading: false,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -38,11 +40,17 @@ class RoomAppBar extends StatelessWidget {
             children: [
               Text(
                 name,
-                style: Theme.of(context).textTheme.headline1,
+                style: Theme.of(context)
+                    .textTheme
+                    .headline3!
+                    .copyWith(color: LightColors.white1),
               ),
               Text(
                 'Seen 1 hour ago',
-                style: Theme.of(context).textTheme.bodyText2,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyText2!
+                    .copyWith(color: LightColors.white1),
               )
             ],
           ),

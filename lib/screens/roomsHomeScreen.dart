@@ -3,18 +3,18 @@ import 'package:musi_chat/widgets/chatListTile.dart';
 import 'package:musi_chat/widgets/chatsHomeAppBar.dart';
 import 'package:musi_chat/widgets/searchTextField.dart';
 
-class ChatsHomeScreen extends StatefulWidget {
+class RoomsHomeScreen extends StatefulWidget {
   @override
-  _ChatsHomeScreenState createState() => _ChatsHomeScreenState();
+  _RoomsHomeScreenState createState() => _RoomsHomeScreenState();
 }
 
-class _ChatsHomeScreenState extends State<ChatsHomeScreen> {
+class _RoomsHomeScreenState extends State<RoomsHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: PreferredSize(
             preferredSize: Size.fromHeight(kToolbarHeight),
-            child: ChatsHomeAppBar()),
+            child: RoomsHomeAppBar()),
         body: SafeArea(
           child: Container(
             padding: EdgeInsets.all(16),

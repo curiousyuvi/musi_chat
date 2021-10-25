@@ -12,10 +12,10 @@ class SearchTextField extends StatelessWidget {
     return Container(
       height: 40,
       decoration: BoxDecoration(
-          color: Theme.of(context).backgroundColor,
-          borderRadius: BorderRadius.circular(100),
-          border: Border.all(color: Theme.of(context).accentColor, width: 2)),
-      padding: EdgeInsets.symmetric(horizontal: 10),
+        color: Theme.of(context).backgroundColor,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      padding: EdgeInsets.symmetric(horizontal: 15),
       width: double.infinity,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -23,7 +23,7 @@ class SearchTextField extends StatelessWidget {
         children: [
           FaIcon(
             FontAwesomeIcons.search,
-            color: Theme.of(context).shadowColor,
+            color: Theme.of(context).accentColor,
             size: 20,
           ),
           SizedBox(

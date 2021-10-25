@@ -18,6 +18,8 @@ dependencies:
   rive: ^0.7.28
   bubble: ^1.2.1
   syncfusion_flutter_sliders: ^19.3.44
+  socket_io_client: ^1.0.1
+  line_icons: ^2.0.1
 
 dev_dependencies:
   flutter_test:

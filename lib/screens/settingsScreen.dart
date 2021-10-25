@@ -22,19 +22,16 @@ class _SettingsScreenState extends State<SettingsScreen> {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              Icons.settings_outlined,
-              size: 26,
-            ),
-            SizedBox(
-              width: 5,
-            ),
+            // Icon(
+            //   Icons.settings_outlined,
+            //   size: 30,
+            // ),
+            // SizedBox(
+            //   width: 5,
+            // ),
             Text(
               'Settings',
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyText1!
-                  .copyWith(fontWeight: FontWeight.bold, fontSize: 25),
+              style: Theme.of(context).textTheme.headline1,
             )
           ],
         ),

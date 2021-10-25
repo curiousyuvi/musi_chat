@@ -7,6 +7,7 @@ import 'package:musi_chat/screens/songScreen.dart';
 import 'package:musi_chat/widgets/roomAppBar.dart';
 import 'package:musi_chat/widgets/roomTopNavBar.dart';
 import 'package:provider/provider.dart';
+import 'package:socket_io_client/socket_io_client.dart' as IO;
 
 class RoomScreen extends StatefulWidget {
   @override
@@ -18,8 +19,8 @@ class _RoomScreenState extends State<RoomScreen> {
 
   var chatScreenKey = GlobalKey<NavigatorState>();
   var songScreenKey = GlobalKey<NavigatorState>();
-
   var pageController = PageController(initialPage: 0);
+  late IO.Socket socket;
 
   void changeScreen() {
     setState(() {
@@ -31,6 +32,24 @@ class _RoomScreenState extends State<RoomScreen> {
     });
     pageController.animateToPage(currentScreen == RoomScreenType.chat ? 0 : 1,
         duration: Duration(milliseconds: 300), curve: Curves.easeInOut);
+  }
+
+  void connect() {
+    socket = IO.io("http://192.168.29.27:4000", <String, dynamic>{
+      "transports": ["websocket"],
+      "autoConnect": false
+    });
+
+    socket.connect();
+    socket.onConnect((data) => print("connected"));
+    print(socket.connected);
+    socket.emit("/test", "Hello World");
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    connect();
   }
 
   @override

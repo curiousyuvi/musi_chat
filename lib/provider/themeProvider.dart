@@ -16,7 +16,7 @@ class ThemeProvider extends ChangeNotifier {
 class MyThemes {
   static ThemeData darkTheme = ThemeData(
       appBarTheme:
-          AppBarTheme(backgroundColor: DarkColors.green1, elevation: 0),
+          AppBarTheme(backgroundColor: DarkColors.black1, elevation: 0),
       iconTheme: IconThemeData(color: DarkColors.black5),
       primaryColor: DarkColors.green1,
       accentColor: DarkColors.green2,
@@ -30,6 +30,16 @@ class MyThemes {
       textTheme: TextTheme(
           headline1: TextStyle(
               color: DarkColors.black5,
+              fontSize: 30,
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.bold),
+          headline2: TextStyle(
+              color: DarkColors.black5,
+              fontSize: 25,
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.bold),
+          headline3: TextStyle(
+              color: DarkColors.black5,
               fontSize: 20,
               fontFamily: 'Poppins',
               fontWeight: FontWeight.bold),
@@ -42,7 +52,7 @@ class MyThemes {
 
   static ThemeData lightTheme = ThemeData(
       appBarTheme:
-          AppBarTheme(backgroundColor: LightColors.green1, elevation: 0),
+          AppBarTheme(backgroundColor: LightColors.white1, elevation: 0),
       iconTheme: IconThemeData(color: LightColors.white5),
       primaryColor: LightColors.green1,
       accentColor: LightColors.green2,
@@ -55,6 +65,16 @@ class MyThemes {
       errorColor: LightColors.red,
       textTheme: TextTheme(
           headline1: TextStyle(
+              color: LightColors.white5,
+              fontSize: 30,
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.bold),
+          headline2: TextStyle(
+              color: LightColors.white5,
+              fontSize: 25,
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.bold),
+          headline3: TextStyle(
               color: LightColors.white5,
               fontSize: 20,
               fontFamily: 'Poppins',

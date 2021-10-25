@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:musi_chat/constants/colors.dart';
 import 'package:musi_chat/constants/enums.dart';
 import 'package:musi_chat/provider/themeProvider.dart';
 import 'package:rive/rive.dart';
@@ -20,8 +21,15 @@ class RoomTopNavBar extends StatelessWidget {
       children: [
         Container(color: Theme.of(context).primaryColor, child: Divider()),
         Container(
-          padding: EdgeInsets.all(8),
-          decoration: BoxDecoration(color: Theme.of(context).primaryColor),
+          padding: EdgeInsets.all(0),
+          decoration: BoxDecoration(
+              color: Theme.of(context).primaryColor,
+              // boxShadow: [
+              //   BoxShadow(color: Colors.black.withOpacity(0.5), blurRadius: 10)
+              // ],
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(10),
+                  bottomRight: Radius.circular(10))),
           height: 50,
           width: double.infinity,
           child: Row(
@@ -31,12 +39,15 @@ class RoomTopNavBar extends StatelessWidget {
               GestureDetector(
                 onTap: onTap,
                 child: Container(
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).primaryColor.withOpacity(0),
                   height: double.infinity,
                   width: MediaQuery.of(context).size.width * 0.4,
                   child: Center(
                     child: FaIcon(
                       FontAwesomeIcons.solidCommentDots,
+                      color: currentScreen == RoomScreenType.chat
+                          ? LightColors.white1
+                          : Theme.of(context).accentColor,
                       size: 25,
                     ),
                   ),
@@ -46,7 +57,7 @@ class RoomTopNavBar extends StatelessWidget {
               GestureDetector(
                 onTap: onTap,
                 child: Container(
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).primaryColor.withOpacity(0),
                   height: double.infinity,
                   width: MediaQuery.of(context).size.width * 0.4,
                   child: Center(
@@ -58,31 +69,14 @@ class RoomTopNavBar extends StatelessWidget {
                                 'riveAssets/music_wave_dark.riv')
                         : FaIcon(
                             FontAwesomeIcons.music,
+                            color: currentScreen == RoomScreenType.song
+                                ? LightColors.white1
+                                : Theme.of(context).accentColor,
                             size: 25,
                           ),
                   ),
                 ),
               ),
-            ],
-          ),
-        ),
-        Container(
-          child: Row(
-            children: [
-              Expanded(
-                  child: Container(
-                height: 8,
-                color: currentScreen == RoomScreenType.chat
-                    ? Theme.of(context).accentColor
-                    : Theme.of(context).primaryColor,
-              )),
-              Expanded(
-                  child: Container(
-                height: 8,
-                color: currentScreen == RoomScreenType.song
-                    ? Theme.of(context).accentColor
-                    : Theme.of(context).primaryColor,
-              ))
             ],
           ),
         )
