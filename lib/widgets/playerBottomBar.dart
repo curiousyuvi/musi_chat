@@ -134,10 +134,8 @@ class PlayerBottomBar extends StatelessWidget {
                             playProvider.TogglePlayPause();
                           },
                           child: isPlaying
-                              ? FaIcon(
-                                  FontAwesomeIcons.solidPauseCircle,
-                                  size: 28,
-                                )
+                              ? FaIcon(FontAwesomeIcons.solidPauseCircle,
+                                  size: 28, color: LightColors.white1)
                               : FaIcon(FontAwesomeIcons.solidPlayCircle,
                                   size: 28, color: LightColors.white1),
                         ),
