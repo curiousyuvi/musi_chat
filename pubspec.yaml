@@ -20,6 +20,22 @@ dependencies:
   syncfusion_flutter_sliders: ^19.3.44
   socket_io_client: ^1.0.1
   line_icons: ^2.0.1
+  flutter_native_splash: ^1.2.3
+  flutter_launcher_icons: ^0.9.2
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/musiChatLogo.jpg"
+
+flutter_native_splash:
+  
+  android: true
+  ios: true
+  web: true
+
+  color: "#21AA68"
+  image: assets/musiChatIcon.png
 
 dev_dependencies:
   flutter_test:
