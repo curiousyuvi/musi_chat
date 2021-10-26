@@ -85,14 +85,13 @@ class PlayerBottomBar extends StatelessWidget {
                       style: Theme.of(context)
                           .textTheme
                           .bodyText1!
-                          .copyWith(fontSize: 15),
+                          .copyWith(fontSize: 15, color: LightColors.white1),
                     ),
                     Text(
                       'Billie Ellish',
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyText2
-                          ?.copyWith(fontSize: 12),
+                      style: Theme.of(context).textTheme.bodyText2?.copyWith(
+                          fontSize: 12,
+                          color: LightColors.white1.withOpacity(0.5)),
                     ),
                     SizedBox(
                       height: 15,
@@ -106,14 +105,18 @@ class PlayerBottomBar extends StatelessWidget {
                           style: Theme.of(context)
                               .textTheme
                               .bodyText2!
-                              .copyWith(fontSize: 12),
+                              .copyWith(
+                                  fontSize: 12,
+                                  color: LightColors.white1.withOpacity(0.5)),
                         ),
                         Text(
                           '02:34',
                           style: Theme.of(context)
                               .textTheme
                               .bodyText2!
-                              .copyWith(fontSize: 12),
+                              .copyWith(
+                                  fontSize: 12,
+                                  color: LightColors.white1.withOpacity(0.5)),
                         )
                       ],
                     ),
@@ -121,10 +124,8 @@ class PlayerBottomBar extends StatelessWidget {
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        FaIcon(
-                          FontAwesomeIcons.stepBackward,
-                          size: 15,
-                        ),
+                        FaIcon(FontAwesomeIcons.stepBackward,
+                            size: 15, color: LightColors.white1),
                         SizedBox(
                           width: 20,
                         ),
@@ -137,18 +138,14 @@ class PlayerBottomBar extends StatelessWidget {
                                   FontAwesomeIcons.solidPauseCircle,
                                   size: 28,
                                 )
-                              : FaIcon(
-                                  FontAwesomeIcons.solidPlayCircle,
-                                  size: 28,
-                                ),
+                              : FaIcon(FontAwesomeIcons.solidPlayCircle,
+                                  size: 28, color: LightColors.white1),
                         ),
                         SizedBox(
                           width: 20,
                         ),
-                        FaIcon(
-                          FontAwesomeIcons.stepForward,
-                          size: 15,
-                        )
+                        FaIcon(FontAwesomeIcons.stepForward,
+                            size: 15, color: LightColors.white1)
                       ],
                     )
                   ],
@@ -173,9 +170,8 @@ class PlayerBottomBar extends StatelessWidget {
                       child: Slider(
                         min: 0.0,
                         max: 100.0,
-                        activeColor: Theme.of(context).shadowColor,
-                        inactiveColor:
-                            Theme.of(context).shadowColor.withOpacity(0.3),
+                        activeColor: LightColors.white1,
+                        inactiveColor: LightColors.white1.withOpacity(0.5),
                         value: sliderValue,
                         label: 'Song',
                         onChanged: onSliderValChanged,

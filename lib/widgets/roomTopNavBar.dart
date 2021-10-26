@@ -62,11 +62,7 @@ class RoomTopNavBar extends StatelessWidget {
                   width: MediaQuery.of(context).size.width * 0.4,
                   child: Center(
                     child: isPlaying
-                        ? getThemeMode(context) == ThemeMode.dark
-                            ? RiveAnimation.asset(
-                                'riveAssets/music_wave_light.riv')
-                            : RiveAnimation.asset(
-                                'riveAssets/music_wave_dark.riv')
+                        ? RiveAnimation.asset('riveAssets/music_wave_light.riv')
                         : FaIcon(
                             FontAwesomeIcons.music,
                             color: currentScreen == RoomScreenType.song
