@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.musi_chat">
    <application
-        android:label="musi_chat"
+        android:label="Musi Chat"
         android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
