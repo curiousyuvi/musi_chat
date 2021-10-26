@@ -14,6 +14,9 @@ class _LoginScreenState extends State<LoginScreen> {
       body: SafeArea(
         child: Container(
           padding: EdgeInsets.all(16),
+          child: Column(
+            children: [Image.asset('assets/musiChatIconG.png')],
+          ),
         ),
       ),
     );

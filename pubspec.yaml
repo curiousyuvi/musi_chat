@@ -27,7 +27,7 @@ dependencies:
 flutter_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/musiChatLogo.jpg"
+  image_path: "assets/musiChatLogo.png"
 
 flutter_native_splash:
   
@@ -35,8 +35,8 @@ flutter_native_splash:
   ios: true
   web: true
 
-  color: "#21AA68"
-  image: assets/musiChatIcon.png
+  color: "#303841"
+  image: assets/musiChatIconG.png
 
 dev_dependencies:
   flutter_test:
@@ -55,6 +55,6 @@ flutter:
     - family: Poppins
       fonts:
         - asset: fonts/poppins.ttf
-    - family: BeautyMountain
+    - family: Comfortaa
       fonts:
-        - asset: fonts/beautyMountain.ttf
+        - asset: fonts/comfortaa.ttf
