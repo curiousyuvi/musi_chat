@@ -3,10 +3,10 @@ import 'package:otp_text_field/otp_text_field.dart';
 import 'package:otp_text_field/style.dart';
 
 class OTPCard extends StatelessWidget {
-  final void Function(String?)? onOTPChanged;
+  final void Function(String?)? onOTPCompleted;
   final void Function()? onVerifyOTPPressed;
 
-  OTPCard({this.onOTPChanged, this.onVerifyOTPPressed});
+  OTPCard({this.onOTPCompleted, this.onVerifyOTPPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class OTPCard extends StatelessWidget {
             children: [
               Expanded(
                   child: OTPTextField(
-                onChanged: onOTPChanged,
+                onCompleted: onOTPCompleted,
                 outlineBorderRadius: 5,
                 fieldWidth: 50,
                 length: 6,

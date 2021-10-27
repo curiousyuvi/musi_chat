@@ -149,7 +149,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           },
                         ),
                         OTPCard(
-                          onOTPChanged: (otp) {
+                          onOTPCompleted: (otp) {
                             this.otp = otp as String;
                             print(otp);
                           },
