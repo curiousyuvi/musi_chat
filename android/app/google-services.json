@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "208432702609",
+    "project_id": "musi-chat",
+    "storage_bucket": "musi-chat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208432702609:android:2ae2f5e52021cddaa54b30",
+        "android_client_info": {
+          "package_name": "com.curiousyuvi.musichat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "208432702609-5p63bj3i67eikjepefa18fsdojob2vap.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA55AkwR0LzwDIdmA3W4T8GQE-XZ8y3Juk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "208432702609-5p63bj3i67eikjepefa18fsdojob2vap.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

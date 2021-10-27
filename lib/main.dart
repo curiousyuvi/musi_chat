@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:musi_chat/constants/colors.dart';
@@ -9,7 +10,14 @@ import 'package:musi_chat/screens/settingsScreen.dart';
 import 'package:provider/provider.dart';
 import 'screens/roomsHomeScreen.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
+  //To force stop screen rotation
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+
   runApp(MyApp());
 }
 
@@ -23,10 +31,6 @@ class MyApp extends StatelessWidget {
         ],
         builder: (context, _) {
           final themeProvider = Provider.of<ThemeProvider>(context);
-
-          //To force stop screen rotation
-          SystemChrome.setPreferredOrientations(
-              [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 
           //To change the system Navigation bar color according to the theme
           SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
