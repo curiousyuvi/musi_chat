@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:musi_chat/auth/isLoggedIn.dart';
 import 'package:musi_chat/constants/colors.dart';
 import 'package:musi_chat/provider/playProvider.dart';
 import 'package:musi_chat/provider/themeProvider.dart';
@@ -58,7 +59,7 @@ class MyApp extends StatelessWidget {
             theme: MyThemes.lightTheme,
             darkTheme: MyThemes.darkTheme,
             themeMode: themeProvider.themeMode,
-            initialRoute: "/login",
+            initialRoute: isLoggedIn() ? "/" : "/login",
           );
         });
   }
