@@ -5,7 +5,7 @@ import 'package:musi_chat/auth/isLoggedIn.dart';
 import 'package:musi_chat/constants/colors.dart';
 import 'package:musi_chat/provider/playProvider.dart';
 import 'package:musi_chat/provider/themeProvider.dart';
-import 'package:musi_chat/screens/loginScreen.dart';
+import 'package:musi_chat/screens/authenticationScreen.dart';
 import 'package:musi_chat/screens/roomScreen.dart';
 import 'package:musi_chat/screens/settingsScreen.dart';
 import 'package:provider/provider.dart';
@@ -52,14 +52,14 @@ class MyApp extends StatelessWidget {
               "/chat": (context) {
                 return RoomScreen();
               },
-              "/login": (context) {
-                return LoginScreen();
+              "/auth": (context) {
+                return AuthenticationScreen();
               }
             },
             theme: MyThemes.lightTheme,
             darkTheme: MyThemes.darkTheme,
             themeMode: themeProvider.themeMode,
-            initialRoute: isLoggedIn() ? "/" : "/login",
+            initialRoute: isLoggedIn() ? "/" : "/auth",
           );
         });
   }

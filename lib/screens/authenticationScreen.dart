@@ -6,14 +6,14 @@ import 'package:musi_chat/widgets/otpCard.dart';
 import 'package:musi_chat/widgets/phoneNumberCard.dart';
 import 'package:musi_chat/auth/sendOTP.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class AuthenticationScreen extends StatefulWidget {
+  const AuthenticationScreen({Key? key}) : super(key: key);
 
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _AuthenticationScreenState createState() => _AuthenticationScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _AuthenticationScreenState extends State<AuthenticationScreen> {
   bool isLoading = false;
   String? phoneNumber = '';
   String? dialCountryCode = '+91';
@@ -59,7 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 Text(
                                   'chat',
                                   style: TextStyle(
-                                      color: DarkColors.black5,
+                                      color: Theme.of(context).shadowColor,
                                       fontWeight: FontWeight.bold,
                                       fontFamily: 'Comfortaa',
                                       fontSize: 40),
@@ -84,23 +84,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   Column(
                     children: [
                       Text(
-                        'Login',
-                        textAlign: TextAlign.start,
-                        style: Theme.of(context)
-                            .textTheme
-                            .headline1!
-                            .copyWith(fontSize: 40),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        'Login using your phone number and verify the OTP you received',
+                        'Enter your phone number and verify the OTP you received',
                         textAlign: TextAlign.center,
                         style: Theme.of(context)
                             .textTheme
                             .bodyText2!
-                            .copyWith(fontSize: 15),
+                            .copyWith(fontSize: 17),
                       ),
                     ],
                   ),
